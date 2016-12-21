@@ -1,29 +1,62 @@
-<html>
-  <head>
-    <!-- Load c3.css -->
-    <link href="lib/c3/c3.css" rel="stylesheet" type="text/css">
-
-    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-
-    <!-- Load d3.js and c3.js -->
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <script src="lib/c3/c3.js"></script>
-    <script src="c3_demo.js"></script>
-    <style>
-      .chart {
-        height: 280px;
-        margin: 0px auto;
-        text-align: center;
+$(document).ready(function() {
+  var chart = c3.generate({
+    bindto: '#chart',
+    data: {
+      columns: [
+        ['Luke Skywalker', 90, 87, 90, 94, 92, 89],
+        ['Obi Wan Kenobi', 50, 50, 60, 40, 15, 25]
+      ]
+    },
+    axis: {
+      y: {
+        label: {
+          text: 'Grade (%)',
+          position: 'outer-middle'
+        }
+      },
+      x: {
+        label: {
+          text: 'Week Number',
+          position: 'outer-middle'
+        }
       }
-    </style>
-  </head>
-  <body>
-    <h1>C3 Graphs</h1>
+    }
+  });
 
-    <h2>Grade Trends</h2>
-    <div id="chart" class="c3 chart"></div>
-
-    <h2>Grades by Assignment</h2>
-    <div id="chart2" class="c3 chart"></div>
-  </body>
-</html>
+  var chart2 = c3.generate({
+    bindto: '#chart2',
+    data: {
+      json: [
+        {assignment_name: 'Prueba 1', score: 50},
+        {assignment_name: 'Prueba 2', score: 50},
+        {assignment_name: 'Examen 1', score: 60},
+        {assignment_name: 'Prueba 3', score: 40},
+        {assignment_name: 'Prueba 4', score: 15},
+        {assignment_name: 'Examen 2', score: 80}
+      ],
+      type: 'bar',
+      keys: {
+        x: 'assignment_name',
+        value: ['assignment_name', 'score']
+      }
+    },
+    axis: {
+      y: {
+        max: 100,
+        min: 0,
+        padding: {top: 0, bottom: 0},
+        label: {
+          text: 'Grade (%)',
+          position: 'outer-middle'
+        }
+      },
+      x: {
+        type: 'category',
+        label: {
+          text: 'Asisgnments',
+          position: 'outer-middle'
+        }
+      }
+    }
+  });
+});
