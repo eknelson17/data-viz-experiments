@@ -17,7 +17,7 @@ $(document).ready(function() {
       x: {
         label: {
           text: 'Week Number',
-          position: 'outer-middle'
+          position: 'outer-center'
         }
       }
     }
@@ -53,8 +53,59 @@ $(document).ready(function() {
       x: {
         type: 'category',
         label: {
-          text: 'Asisgnments',
+          text: 'Assignments',
+          position: 'outer-center'
+        }
+      }
+    }
+  });
+
+  var chart3 = c3.generate({
+    bindto: '#chart3',
+    data: {
+      json: [
+        {student_name: 'Luke Skywalker', grade: 70, increase: 10},
+        {student_name: 'Kylo Ren', grade: 50, decrease: 10},
+        {student_name: 'Mace Windu', grade: 100},
+        {student_name: 'Obi Wan Kenobi', grade: 80, increase: 5},
+        {student_name: 'Anakin Skywalker', grade: 15, decrease: 5},
+        {student_name: 'Qui-Gon Ginn', grade: 90}
+      ],
+      keys: {
+        x: 'student_name',
+        value: ['grade', 'increase', 'decrease']
+      },
+      type: 'bar',
+      order: 'asc',
+      groups: [
+        ['grade', 'increase', 'decrease']
+      ],
+      colors: {
+        grade: '#999999',
+        increase: 'green',
+        decrease: 'red'
+      }
+    },
+    grid: {
+      y: {
+        lines: [{value:68, text: 'Passing Grade'}]
+      }
+    },
+    axis: {
+      y: {
+        max: 100,
+        min: 0,
+        padding: {top: 0, bottom: 0},
+        label: {
+          text: 'Grade (%)',
           position: 'outer-middle'
+        }
+      },
+      x: {
+        type: 'category',
+        label: {
+          text: 'Students',
+          position: 'outer-center'
         }
       }
     }
