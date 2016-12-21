@@ -110,4 +110,21 @@ $(document).ready(function() {
       }
     }
   });
+
+  var chart4 = c3.generate({
+    bindto: '#chart4',
+    data: {
+      json: [
+        { 'On time': 250, 'Late': 40, 'Missing': 10 }
+      ],
+      keys: {
+        value: ['On time', 'Late', 'Missing']
+      },
+      type: 'donut',
+      colors: {
+        'Late': 'red',
+        'Missing': 'black'
+      }
+    },
+  });
 });
