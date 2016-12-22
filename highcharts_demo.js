@@ -25,6 +25,27 @@ $(document).ready(function () {
     }]
   });
 
+  var columnChart = Highcharts.chart('column-chart', {
+    chart: {
+      type: 'column'
+    },
+    title: {
+      text: 'Grades for Assignment'
+    },
+    xAxis: {
+      categories: ['Prueba 1', 'Prueba 2', 'Examen 1', 'Prueba 3', 'Prueba 4', 'Examen 2']
+    },
+    yAxis: {
+      title: {
+        text: 'Grade (%)'
+      }
+    },
+    series: [{
+      name: 'Luke Skywalker',
+      data: [100, 70, 84, 62, 79, 87]
+    }]
+  });
+
   var barChart = Highcharts.chart('bar-chart', {
     chart: {
       type: 'bar'
