@@ -32,6 +32,7 @@ This mini-project was the result of a research spike done for my job, so the "us
 #### Cons
 * Had trouble getting it set-up
   * Mostly dumb mistakes, but the "Getting Started" docs skipped steps assuming you know things
+  * Some problems were a side effects of my dev env on my laptop and things being super out-of-date
 * Google searches often return D3 answers
 * Community seems to be mixed with the D3 one, making it a bit difficult to find articles
 
@@ -54,6 +55,7 @@ This mini-project was the result of a research spike done for my job, so the "us
 * Good examples
   * Get you 90% of the way there
 * Documentation is pretty extensive, but difficult to grep at times
+* Community support is there, but not to the same level as D3 and it's popular wrappers
 
 #### Cons
 * Not free
@@ -77,7 +79,35 @@ This mini-project was the result of a research spike done for my job, so the "us
 ### D3
 
 #### Pros
+* Already in our stack
+* Super powerful and customizable
+* SVG
+* Great community - widely used
+* FOSS
+* Seems to have reasonable docs for once you know what you're doing
+* Good examples, including those from the community
 
 #### Cons
+* Have to build every piece of the chart from scratch
+  * Seems excessive for this use case of needing standard chart types
+  * Makes it more bug-prone
+* Steeper learning curve
+* Their site doesn't include good "Getting Started" docs
+  * I'm sure I could find a few blog posts covering the initial learning curve, but a library's docs should really include that sort of thing
 
 #### Thoughts
+* Didn't actually have time to build anything using strictly D3
+  * Prioritized the other two as they seemed to fit our use case better
+* From previous experience fixing D3 bugs in our app:
+  * It's very hard to digest the code and picture what it'll look like
+  * Tricky to style using CSS
+  
+  
+## Final Thoughts
+* D3 would be total overkill and more work than it's worth for the types of data visualizations we want to do.
+* HighCharts doesn't seem to be significantly better than C3, so I'd say it is not worth the cost to use it commerically.
+* HighCharts is more limited in the data formats it accepts.
+  * You have to fight with it until it finally finds something it can parse.
+* C3 does what I need it to in a way that makes sense to me, especially when it comes to JSON and CSS support.
+
+C3 has my vote.
