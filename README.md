@@ -3,6 +3,8 @@ Learning and experimenting with a few data visualization libraries
 
 This mini-project was the result of a research spike done for my job, so the "us" and "we" uses below refer to my team at Vista Higher Learning.
 
+I used `python -m SimpleHTTPServer 8080` to run a local server to see my graphs.
+
 ## Comparison Notes
 
 ### C3
