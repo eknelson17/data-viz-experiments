@@ -1,25 +1,48 @@
-$(document).ready(function () { 
-  var myChart = Highcharts.chart('container', {
+$(document).ready(function () {
+  var lineGraph = Highcharts.chart('line-graph', {
+    title: {
+      text: 'Grade Trends for the last month'
+    },
+    xAxis: {
+      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4']
+    },
+    yAxis: {
+      title: {
+        text: 'Grade (%)'
+      }
+    },
+    series: [{
+      name: 'Luke Skywalker',
+      data: [100, 97, 89, 91]
+    },
+    {
+      name: 'Anakin Skywalker',
+      data: [80, 82, 81, 79]
+    },
+    {
+      name: 'Obi Wan Kenobi',
+      data: [90, 88, 89, 92]
+    }]
+  });
+
+  var barChart = Highcharts.chart('bar-chart', {
     chart: {
       type: 'bar'
     },
     title: {
-      text: 'Fruit Consumption'
+      text: 'Grades for Assignment'
     },
     xAxis: {
-      categories: ['Apples', 'Bananas', 'Oranges']
+      categories: ['Prueba 1', 'Prueba 2', 'Examen 1', 'Prueba 3', 'Prueba 4', 'Examen 2']
     },
     yAxis: {
       title: {
-        text: 'Fruit eaten'
+        text: 'Grade (%)'
       }
     },
     series: [{
-      name: 'Jane',
-      data: [1, 0, 4]
-    }, {
-      name: 'John',
-      data: [5, 7, 3]
+      name: 'Luke Skywalker',
+      data: [100, 70, 84, 62, 79, 87]
     }]
   });
 });
