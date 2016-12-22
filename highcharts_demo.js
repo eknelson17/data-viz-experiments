@@ -48,7 +48,8 @@ $(document).ready(function () {
 
   var stackedColumnChart = Highcharts.chart('stacked-column-chart', {
         chart: {
-            type: 'column'
+            type: 'column',
+            spacingRight: 100
         },
         title: {
             text: 'Change in Grades over the Last Week'
@@ -62,6 +63,17 @@ $(document).ready(function () {
                 text: 'Grade (%)'
             },
             reversedStacks: false,
+            plotLines: [{ // mark the weekend
+                color: '#ccc',
+                width: 1,
+                value: 68,
+                label: {
+                  text: 'Passing Grade',
+                  align: 'right',
+                  x: 90,
+                  y: 4
+                }
+            }]
         },
         legend: {
             align: 'right',
